@@ -333,3 +333,5 @@ obj/
 [Tt]est[Rr]esult*
 
 Components/*
+
+*.DS_Store

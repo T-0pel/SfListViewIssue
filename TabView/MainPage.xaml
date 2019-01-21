@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             
+             xmlns:tabView="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
+             xmlns:local="clr-namespace:TabView" x:Class="TabView.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Tap the equipment type heading to switch between tabs. Tap item to view description. Hold and drag item to reorder." />
+            <Label Text="Tap the equipment type heading to switch between tabs. Tap item to view description. Hold and drag item to reorder." />
+            <Label Text="Tap the equipment type heading to switch between tabs. Tap item to view description. Hold and drag item to reorder." />
+            <Label Text="Tap the equipment type heading to switch between tabs. Tap item to view description. Hold and drag item to reorder." />
+            <Label Text="Tap the equipment type heading to switch between tabs. Tap item to view description. Hold and drag item to reorder." />
+            <Label Text="Tap the equipment type heading to switch between tabs. Tap item to view description. Hold and drag item to reorder." />
+            <Label Text="Tap the equipment type heading to switch between tabs. Tap item to view description. Hold and drag item to reorder." />
+            <Label Text="Tap the equipment type heading to switch between tabs. Tap item to view description. Hold and drag item to reorder." />
+
+            <tabView:SfTabView BackgroundColor="#f6f6f6" >
+                <tabView:SfTabItem Title="Call">
+                    <tabView:SfTabItem.Content>
+                        <StackLayout>
+                            <syncfusion:SfListView  x:Name="ContactListView"  
+                                  ItemsSource="{Binding ContactList}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                                  >
+                                <syncfusion:SfListView.BindingContext>
+                                    <local:ContactsViewModel />
+                                </syncfusion:SfListView.BindingContext>
+                                <syncfusion:SfListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout  Margin="30,0,0,0">
+                                                <ScrollView>
+                                                    <Label 
+                                                Text="{Binding Name}"
+                                                FontSize="24" 
+                                                 />
+
+                                                </ScrollView>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </syncfusion:SfListView.ItemTemplate>
+                            </syncfusion:SfListView>
+                        </StackLayout>
+                    </tabView:SfTabItem.Content>
+                    <tabView:SfTabItem.HeaderContent>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Chats"
+                         TextColor="#FF00AFF0"
+                         FontSize="16"
+                         WidthRequest="50"
+                         HeightRequest="20"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"/>
+
+                            <Label Text="H" 
+                          Font="H" 
+                             TextColor="#FF00AFF0"
+                         FontSize="16"
+                         WidthRequest="50"
+                         HeightRequest="20"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center">
+                                <Label.FontFamily>
+                                    <OnPlatform 
+                     x:TypeArguments="x:String"
+                     Android="NestedTab.ttf#NestedTab" 
+                     iOS="NestedTab" 
+                     WinPhone="NestedTab.ttf#NestedTab" />
+                                </Label.FontFamily>
+                            </Label>
+
+                        </StackLayout>
+
+                    </tabView:SfTabItem.HeaderContent>
+                </tabView:SfTabItem>
+                <tabView:SfTabItem Title="New">
+                    <tabView:SfTabItem.Content>
+                        <Grid BackgroundColor="White" x:Name="AllContactsGrid2" >
+                            <syncfusion:SfListView x:Name="ContactListView2"
+                                  ItemsSource="{Binding ContactList}"
+                                  >
+                                <syncfusion:SfListView.BindingContext>
+                                    <local:ContactsViewModel />
+                                </syncfusion:SfListView.BindingContext>
+                                <syncfusion:SfListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout  Margin="30,0,0,0">
+                                                <ScrollView>
+                                                    <Label 
+                                                Text="{Binding Name}" 
+                                                FontSize="20" 
+                                                TextColor="LightSlateGray" />
+                                                </ScrollView>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </syncfusion:SfListView.ItemTemplate>
+                            </syncfusion:SfListView>
+                        </Grid>
+                    </tabView:SfTabItem.Content>
+                    <tabView:SfTabItem.HeaderContent>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="New"
+                         TextColor="#FF00AFF0"
+                         FontSize="16"
+                         WidthRequest="100"
+                         HeightRequest="20"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"/>
+
+                            <Label Text="H" 
+                         Font="H" 
+                         TextColor="#FF00AFF0"
+                         FontSize="16"
+                         WidthRequest="100"
+                         HeightRequest="20"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center">
+                                <Label.FontFamily>
+                                    <OnPlatform 
+                     x:TypeArguments="x:String"
+                     Android="NestedTab.ttf#NestedTab" 
+                     iOS="NestedTab" 
+                     WinPhone="NestedTab.ttf#NestedTab" />
+                                </Label.FontFamily>
+                            </Label>
+
+                        </StackLayout>
+
+                    </tabView:SfTabItem.HeaderContent>
+                </tabView:SfTabItem>
+
+            </tabView:SfTabView>
+        </StackLayout>
+    </ContentPage.Content>
+
+
+</ContentPage>
